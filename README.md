@@ -5,7 +5,7 @@
 [![Platform](https://img.shields.io/badge/platform-iOS-red.svg)](https://github.com/Rex-121/XFoundation)
 [![requirements](https://img.shields.io/badge/requirements-iOS%209.0%2B-blue.svg)](https://github.com/Rex-121/XFoundation)
 [![codecov](https://codecov.io/gh/Rex-121/XKit/branch/master/graph/badge.svg)](https://codecov.io/gh/Rex-121/XKit)
-
+[![codebeat badge](https://codebeat.co/badges/9362ed0f-77c6-41c1-90e7-b405fcb53640)](https://codebeat.co/projects/github-com-rex-121-xkit-master)
 
 ## Example
 

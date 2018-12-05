@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0900"
+   LastUpgradeVersion = "1010"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "XKit_Example.app"
-               BlueprintName = "XKit_Example"
-               ReferencedContainer = "container:XKit.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "XKit_Tests.xctest"
-               BlueprintName = "XKit_Tests"
+               BlueprintIdentifier = "7158CDD621B7F38F002E4EFC"
+               BuildableName = "XKit.framework"
+               BlueprintName = "XKit"
                ReferencedContainer = "container:XKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,10 +32,10 @@
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9E2482FC2F8D9CD5DE2052C18D2814CD"
+            BlueprintIdentifier = "7158CDD621B7F38F002E4EFC"
             BuildableName = "XKit.framework"
             BlueprintName = "XKit"
-            ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            ReferencedContainer = "container:XKit.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
@@ -57,9 +43,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "XKit_Tests.xctest"
-               BlueprintName = "XKit_Tests"
+               BlueprintIdentifier = "7158CDDF21B7F38F002E4EFC"
+               BuildableName = "XKitTests.xctest"
+               BlueprintName = "XKitTests"
                ReferencedContainer = "container:XKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -67,9 +53,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "XKit_Example.app"
-            BlueprintName = "XKit_Example"
+            BlueprintIdentifier = "7158CDD621B7F38F002E4EFC"
+            BuildableName = "XKit.framework"
+            BlueprintName = "XKit"
             ReferencedContainer = "container:XKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -86,16 +72,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "XKit_Example.app"
-            BlueprintName = "XKit_Example"
+            BlueprintIdentifier = "7158CDD621B7F38F002E4EFC"
+            BuildableName = "XKit.framework"
+            BlueprintName = "XKit"
             ReferencedContainer = "container:XKit.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -105,16 +90,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "XKit_Example.app"
-            BlueprintName = "XKit_Example"
+            BlueprintIdentifier = "7158CDD621B7F38F002E4EFC"
+            BuildableName = "XKit.framework"
+            BlueprintName = "XKit"
             ReferencedContainer = "container:XKit.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
