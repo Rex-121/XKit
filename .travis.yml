@@ -5,13 +5,6 @@
 osx_image: xcode10.1
 language: swift
 
-cache: cocoapods
-podfile: Example/Podfile
-before_install:
-- gem install cocoapods -v 1.5.3 --no-rdoc --no-ri --no-document --quiet
-- pod install --project-directory=Example
-
-
 script:
 - xcodebuild test -enableCodeCoverage YES -project XKit.xcodeproj -scheme XKitTests -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=12.1,name=iPhone XS' ONLY_ACTIVE_ARCH=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
 
