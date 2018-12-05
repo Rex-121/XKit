@@ -1,9 +1,11 @@
 # XKit
 
-[![CI Status](https://img.shields.io/travis/Rex/XKit.svg?style=flat)](https://travis-ci.org/Rex/XKit)
+[![Build Status](https://travis-ci.org/Rex-121/XKit.svg?branch=master)](https://travis-ci.org/Rex-121/XKit)
 [![Version](https://img.shields.io/cocoapods/v/XKit.svg?style=flat)](https://cocoapods.org/pods/XKit)
-[![License](https://img.shields.io/cocoapods/l/XKit.svg?style=flat)](https://cocoapods.org/pods/XKit)
-[![Platform](https://img.shields.io/cocoapods/p/XKit.svg?style=flat)](https://cocoapods.org/pods/XKit)
+[![Platform](https://img.shields.io/badge/platform-iOS-red.svg)](https://github.com/Rex-121/XFoundation)
+[![requirements](https://img.shields.io/badge/requirements-iOS%209.0%2B-blue.svg)](https://github.com/Rex-121/XFoundation)
+[![codecov](https://codecov.io/gh/Rex-121/XKit/branch/master/graph/badge.svg)](https://codecov.io/gh/Rex-121/XKit)
+
 
 ## Example
 
