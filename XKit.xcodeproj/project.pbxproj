@@ -12,6 +12,8 @@
 		7158CE0821B7F82B002E4EFC /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7158CE0321B7F82B002E4EFC /* AppVersion.swift */; };
 		7158CE0921B7F82B002E4EFC /* ArrayExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7158CE0421B7F82B002E4EFC /* ArrayExt.swift */; };
 		7158CE0F21B7F93F002E4EFC /* XKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7158CE0D21B7F93F002E4EFC /* XKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		715DAF2421BFA8CA0062FF00 /* Encrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715DAF2321BFA8CA0062FF00 /* Encrypt.swift */; };
+		715DAF2621BFAED30062FF00 /* EncryptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715DAF2521BFAED30062FF00 /* EncryptTests.swift */; };
 		71F93D8321B7FA1E00BF3B3C /* TestsAppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F93D8221B7FA1E00BF3B3C /* TestsAppVersion.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,8 @@
 		7158CE0421B7F82B002E4EFC /* ArrayExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExt.swift; sourceTree = "<group>"; };
 		7158CE0D21B7F93F002E4EFC /* XKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XKit.h; sourceTree = "<group>"; };
 		7158CE0E21B7F93F002E4EFC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		715DAF2321BFA8CA0062FF00 /* Encrypt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encrypt.swift; sourceTree = "<group>"; };
+		715DAF2521BFAED30062FF00 /* EncryptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptTests.swift; sourceTree = "<group>"; };
 		71F93D8221B7FA1E00BF3B3C /* TestsAppVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestsAppVersion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +85,7 @@
 			children = (
 				7158CDE521B7F38F002E4EFC /* XKitTests.swift */,
 				71F93D8221B7FA1E00BF3B3C /* TestsAppVersion.swift */,
+				715DAF2521BFAED30062FF00 /* EncryptTests.swift */,
 				7158CDE721B7F390002E4EFC /* Info.plist */,
 			);
 			path = XKitTests;
@@ -100,6 +105,7 @@
 			children = (
 				7158CE0321B7F82B002E4EFC /* AppVersion.swift */,
 				7158CE0421B7F82B002E4EFC /* ArrayExt.swift */,
+				715DAF2321BFA8CA0062FF00 /* Encrypt.swift */,
 			);
 			path = XKit;
 			sourceTree = "<group>";
@@ -222,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				715DAF2421BFA8CA0062FF00 /* Encrypt.swift in Sources */,
 				7158CE0821B7F82B002E4EFC /* AppVersion.swift in Sources */,
 				7158CE0921B7F82B002E4EFC /* ArrayExt.swift in Sources */,
 			);
@@ -233,6 +240,7 @@
 			files = (
 				71F93D8321B7FA1E00BF3B3C /* TestsAppVersion.swift in Sources */,
 				7158CDE621B7F38F002E4EFC /* XKitTests.swift in Sources */,
+				715DAF2621BFAED30062FF00 /* EncryptTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
