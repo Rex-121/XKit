@@ -36,7 +36,6 @@ public struct XX<Base> {
 
 import CommonCrypto
 
-extension String: XProvider {}
 extension XX where Base == String {
     
     /// md5 加密 32位【小】
