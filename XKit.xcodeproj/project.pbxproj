@@ -34,7 +34,7 @@
 		7158CDE021B7F38F002E4EFC /* XKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7158CDE521B7F38F002E4EFC /* XKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XKitTests.swift; sourceTree = "<group>"; };
 		7158CDE721B7F390002E4EFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7158CDF521B7F5EB002E4EFC /* XKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = XKit.podspec; sourceTree = "<group>"; };
+		7158CDF521B7F5EB002E4EFC /* XKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = XKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7158CE0321B7F82B002E4EFC /* AppVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
 		7158CE0421B7F82B002E4EFC /* ArrayExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExt.swift; sourceTree = "<group>"; };
 		7158CE0D21B7F93F002E4EFC /* XKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XKit.h; sourceTree = "<group>"; };
