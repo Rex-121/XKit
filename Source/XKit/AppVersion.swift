@@ -20,6 +20,14 @@ extension XX where Base == Bundle {
         }
         return AppVersion(majorVersion: 0, minorVersion: 0, patchVersion: 0)
     }
+    
+    /// app build号
+    public var buildVersion: String {
+        if let info = self.base.infoDictionary, let build = info["CFBundleVersion"] as? String {
+            return build
+        }
+        return ""
+    }
 }
 
 extension AppVersion: Comparable {
