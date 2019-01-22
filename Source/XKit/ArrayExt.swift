@@ -56,3 +56,40 @@ extension Collection where Element == Int {
     }
     
 }
+
+
+
+// MARK: - RangeReplaceableCollection
+extension RangeReplaceableCollection where Element: Comparable {
+    
+    public mutating func addition(partition: Self.Element, add: Int, new: Self.Element) {
+        // 如果没有发现 Element 直接补全剩下的add
+        let f = self.firstIndex { $0 == partition }
+        guard let first = f else {
+            // 增加分割线
+            append(partition)
+            // 补全
+            return self.plus(plus: add, new: new)
+        }
+        // 需要补全的个数
+        let left = distance(from: first, to: endIndex) - 1
+        // 补全
+        self.plus(plus: add - left, new: new)
+        
+    }
+    
+    
+    /// 补全
+    ///
+    /// - Parameters:
+    ///   - plus: 需要补全的个数
+    ///   - new: 填充的物品
+    /// - Returns: 补全
+    public mutating func plus(plus: Int, new: Self.Element) {
+        if plus <= 0 { return }
+        for _ in 0..<plus {
+            append(new)
+        }
+    }
+    
+}

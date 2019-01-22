@@ -35,12 +35,26 @@ class ArrayTests: XCTestCase {
 //        XCTAssertTrue(composite2 == [10, 15, 20, 25, 30])
         
     }
-//
-//    func testPerformanceExample() {
-//        // This is an example of a performance test case.
-//        self.measure {
-//            // Put the code you want to measure the time of here.
-//        }
-//    }
+
+    
+    func testAddition() {
+        
+        var string = "12345"
+        
+        string.addition(partition: ".", add: 4, new: "0")
+        XCTAssertTrue(string == "12345.0000")
+        
+        var array = [1,4,5,6,7]
+        array.addition(partition: 5, add: 4, new: 0)
+        XCTAssertTrue(array == [1,4,5,6,7,0,0])
+        
+        
+        var string1 = "12345.1"
+        
+        string1.addition(partition: ".", add: 1, new: "0")
+        XCTAssertTrue(string1 == "12345.1")
+        
+    }
+    
 
 }
