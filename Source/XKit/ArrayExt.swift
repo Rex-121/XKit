@@ -93,3 +93,23 @@ extension RangeReplaceableCollection where Element: Comparable {
     }
     
 }
+
+/// FIXME: 尚无Test 算法问题
+extension Array where Element == Character {
+    public mutating func replaceMiddle<C>(left: Index, right: Index, with collection: C) where C : Collection, Character == C.Element {
+        
+        let middle = self.endIndex / 2
+        var range = middle - left...middle + right
+        
+        if range.lowerBound <= startIndex {
+            range = startIndex...range.upperBound
+        }
+        
+        if range.upperBound >= endIndex {
+            range = range.lowerBound...endIndex - 1
+        }
+        
+        self.replaceSubrange(range, with: collection)
+    }
+}
+

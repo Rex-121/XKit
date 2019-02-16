@@ -20,6 +20,12 @@ extension XX where Base == String {
         return s.scanInt(&v) && s.isAtEnd
     }
     
+    /// 替代中间的字符串 abcdefg -> ab***fg
+    public func middleReplaced(left: Int, right: Int, with: String) -> String {
+        var replace = Array(self.base)
+        replace.replaceMiddle(left: left, right: right, with: Array(with))
+        return String(replace)
+    }
 }
 
 

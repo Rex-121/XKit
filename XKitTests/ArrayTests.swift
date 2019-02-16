@@ -56,5 +56,11 @@ class ArrayTests: XCTestCase {
         
     }
     
+    
+    func testRR() {
+        let g = "ggg"
+        print(g.middleReplaced(left: 1, right: 1, with: "***"))
+    }
+    
 
 }
