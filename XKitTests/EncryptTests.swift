@@ -24,8 +24,35 @@ class EncryptTests: XCTestCase {
         
         XCTAssertTrue("hello, world".x.md5 == "e4d7f1b4ed2e42d15898f4b27b019da4")
         
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let code = "0x2600"
+        
+        // 1.从字符串中取出十六进制的数
+        // 创建一个扫描器, 扫描器可以从字符串中提取我们想要的数据
+        let scanner = Scanner(string: code)
+        
+        // 2.将十六进制转换为字符串
+        var result:UInt32 = 0
+        scanner.scanHexInt32(&result)
+        
+        // 3.将十六进制转换为emoji字符串
+        let emojiStr = Character(UnicodeScalar(result)!)
+        
+        // 3.显示
+        print(emojiStr)
+        
+        let g = "🔼🥚😘💪😕🇮🇱🇪🇭🇮🇩🇭🇰🇮🇱🇺🇦🎆🏙💒🏞🌅🕋📝📗🖊📘❄️💥🌩👨🏿‍💻jji脚底板 v 的"
+        print(g.x.containsEmoji)
+        print(code.x.containsEmoji)
+        
+        
+        let ggggg = "🔼我是中文🏞English🌩👨💻"
+
+        
+        print(ggggg.x.switchEmojiToPercent())
+//        g.forEach { print(String($0) + String($0).x.containsEmoji.description) }
+        
+  
     }
 
 }
