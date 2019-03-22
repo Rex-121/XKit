@@ -56,6 +56,17 @@ class ArrayTests: XCTestCase {
         
     }
     
+    
+    func testRangeReplace() {
+        
+        var should = "1"
+        
+        var array = Array(should)
+        array.replaceMiddle(left: 1, right: 1, with: "***")
+        
+        print(array)
+//        let aa = array.replaceMiddle(left: 1, right: 1, with: ["***"])
+    }
 
 
 }

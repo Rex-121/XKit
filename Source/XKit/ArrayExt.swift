@@ -96,15 +96,31 @@ extension RangeReplaceableCollection where Element: Comparable {
 
 /// FIXME: 尚无Test 算法问题
 extension Array where Element == Character {
+    
+    
+    
+    /// 以`中心`开始替换左右元素
+    ///
+    /// - Parameters:
+    ///   - left: 替换到 左侧`left`个元素
+    ///   - right: 替换到 右侧`left`个元素
+    ///   - collection: 用来替换的元素
     public mutating func replaceMiddle<C>(left: Index, right: Index, with collection: C) where C : Collection, Character == C.Element {
         
+        // 如果自身为空，直接添加新数据
+        if isEmpty {
+            self.append(contentsOf: collection)
+            return
+        }
+
         let middle = self.endIndex / 2
         var range = middle - left...middle + right
         
+        /// 处理越界情况
         if range.lowerBound <= startIndex {
             range = startIndex...range.upperBound
         }
-        
+        /// 处理越界情况
         if range.upperBound >= endIndex {
             range = range.lowerBound...endIndex - 1
         }
