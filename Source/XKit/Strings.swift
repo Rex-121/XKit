@@ -33,7 +33,7 @@ extension XX where Base == String {
         return String(replace)
     }
     
-    
+    /// 是否含有 Emoji
     public var containsEmoji: Bool {
         var contains: Bool = false
         for char in self.base {
@@ -45,6 +45,15 @@ extension XX where Base == String {
         return contains
     }
     
+    
+    /// 如果有Eomji, URL转码
+    public var encodingForEmoji: String {
+        if containsEmoji { return switchEmojiToPercent() }
+        return self.base
+    }
+    
+    /// 使用`URL 编码对字符串`Emoji`进行转码
+    /// 不转码非Emoji字符
     public func switchEmojiToPercent() -> String {
     
         var new = Array(self.base).map { String($0) }
