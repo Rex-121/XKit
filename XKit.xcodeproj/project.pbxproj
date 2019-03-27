@@ -17,6 +17,7 @@
 		715DAF2621BFAED30062FF00 /* EncryptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715DAF2521BFAED30062FF00 /* EncryptTests.swift */; };
 		71C50C0921ED8CA000360ED2 /* Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C50C0821ED8CA000360ED2 /* Range.swift */; };
 		71C50C0B21ED94A100360ED2 /* ArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C50C0A21ED94A100360ED2 /* ArrayTests.swift */; };
+		71E62B30224B204600F6D6B9 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E62B2F224B204600F6D6B9 /* StringTests.swift */; };
 		71F93D8321B7FA1E00BF3B3C /* TestsAppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F93D8221B7FA1E00BF3B3C /* TestsAppVersion.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		715DAF2521BFAED30062FF00 /* EncryptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptTests.swift; sourceTree = "<group>"; };
 		71C50C0821ED8CA000360ED2 /* Range.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Range.swift; sourceTree = "<group>"; };
 		71C50C0A21ED94A100360ED2 /* ArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayTests.swift; sourceTree = "<group>"; };
+		71E62B2F224B204600F6D6B9 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		71F93D8221B7FA1E00BF3B3C /* TestsAppVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestsAppVersion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 				71F93D8221B7FA1E00BF3B3C /* TestsAppVersion.swift */,
 				715DAF2521BFAED30062FF00 /* EncryptTests.swift */,
 				71C50C0A21ED94A100360ED2 /* ArrayTests.swift */,
+				71E62B2F224B204600F6D6B9 /* StringTests.swift */,
 				7158CDE721B7F390002E4EFC /* Info.plist */,
 			);
 			path = XKitTests;
@@ -250,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71F93D8321B7FA1E00BF3B3C /* TestsAppVersion.swift in Sources */,
+				71E62B30224B204600F6D6B9 /* StringTests.swift in Sources */,
 				71C50C0B21ED94A100360ED2 /* ArrayTests.swift in Sources */,
 				7158CDE621B7F38F002E4EFC /* XKitTests.swift in Sources */,
 				715DAF2621BFAED30062FF00 /* EncryptTests.swift in Sources */,

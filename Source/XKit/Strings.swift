@@ -70,6 +70,75 @@ extension XX where Base == String {
 
         return new.joined()
     }
+    
+    
+    /// 抛弃最后无用的 `0`
+    ///
+    ///     let string = "739124.083000"
+    ///     print(string)
+    ///     // Prints "739124.083"
+    ///     ----------------------------
+    ///     let string1 = "739124."
+    ///     print(string1)
+    ///     // Prints "739124"
+    ///
+    /// - Complexity: O(n)
+    public var drop_0: String {
+        return drop_0(self.base)
+    }
+    
+    /// 抛弃最后无用的 `0`
+    private func drop_0(_ value: String) -> String {
+        /// 如果不包含`.`或者为空，终止条件
+        guard value.contains("."), let last = value.last else { return value }
+        
+        var new = value
+        
+        switch last {
+        case ".", "0": new.removeLast()
+        default: return value
+        }
+        
+        return drop_0(new)
+    }
+    
+//    public struct Regex: OptionSet {
+//        public init(rawValue: String) {
+//            <#code#>
+//        }
+//
+//        public mutating func formUnion(_ other: XX<Base>.Regex) {
+//            <#code#>
+//        }
+//
+//        public mutating func formIntersection(_ other: XX<Base>.Regex) {
+//            <#code#>
+//        }
+//
+//        public mutating func formSymmetricDifference(_ other: XX<Base>.Regex) {
+//            <#code#>
+//        }
+//
+//        public init?(rawValue: String) {
+//            <#code#>
+//        }
+//
+//        public var rawValue: String
+//
+//        public typealias RawValue = String
+//
+//        public static var lower: Regex { return "a-z" }
+////        case capital = "A-Z"
+////        case num = "0-9"
+////        case chinese = "\\u4e00-\\u9fa5"
+//    }
+    
+//    func regexed(regex: Regex) -> Bool {
+//        guard let regex = try? NSRegularExpression(pattern: "", options: .caseInsensitive),
+//            let _ = regex.firstMatch(in: self.base, options: [], range: NSRange(location: 0, length: self.base.count))
+//            else { return false }
+//        return true
+//    }
 }
 
 extension Character: XProvider {}
