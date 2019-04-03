@@ -69,4 +69,17 @@ class ArrayTests: XCTestCase {
     }
 
 
+    func testRangeFl() {
+        
+        let a = Array("1234567890").keep(left: 5, right: 3, replaced: "****")
+        print(a)
+
+        print([4].keep(left: 9, right: 3, replaced: [1,5]))
+        
+        
+        print([Int]().keep(left: -10, right: 3, replaced: [1,2,3,4,5]))
+        
+        print([1,4].keep(left: 0, right: 1, replaced: [1,2,3,4,5]))
+        
+    }
 }

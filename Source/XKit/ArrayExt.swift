@@ -129,3 +129,64 @@ extension Array where Element == Character {
     }
 }
 
+
+
+extension Array  {
+
+    /// 保留左右两边元素，替换中间元素
+    ///
+    ///     let stirngs = Array("1234567890").keep(left: 5, right: 3, replaced: "****")
+    ///     print(stirngs)
+    ///     // Prints "["1", "2", "3", "4", "5", "*", "*", "*", "*", "8", "9", "0"]"
+    ///
+    ///     let ints = [4].keep(left: 9, right: 3, replaced: [1,5]))
+    ///     print(ints)
+    ///     // Prints "[4, 1, 5]"
+    ///
+    ///     let empty = [Int]().keep(left: -10, right: 3, replaced: [1,2,3,4,5])
+    ///     print(empty)
+    ///     // Prints "[1, 2, 3, 4, 5]"
+    ///
+    ///     let intss = [1,4].keep(left: 0, right: 1, replaced: [1,2,3,4,5]))
+    ///     print(intss)
+    ///     // Prints "[1, 2, 3, 4, 5, 4]"
+    /// - Parameters:
+    ///   - left: 左侧保留到`n`
+    ///   - right: 右侧保留到`n`
+    ///   - replaced: 替换物
+    /// - Returns: [Element]
+    /// - Complexity: O(m) on average, where m is the length of replaced
+    public func keep<S>(left: Int, right: Int, replaced: S) -> [Element] where Element == S.Element, S : Sequence {
+        
+        /// 如果为空 直接返回替代品
+        if self.isEmpty { return Array(replaced) }
+        
+        let offset = (left >= 0 ? left : 0)
+        
+        /// 左侧开始位置 防止越界
+        let startAt = self.index(startIndex, offsetBy: offset, limitedBy: endIndex) ?? 1
+     
+        /// 初始化左侧值
+        var leftValues = self[startIndex..<startAt]
+        /// 直接添加替代品
+        leftValues.append(contentsOf: replaced)
+        
+        /// 如果已经是数组末尾，直接返回
+        if startAt == endIndex { return Array(leftValues) }
+        
+        
+        guard let rightAt = self.index(endIndex, offsetBy: -right, limitedBy: startAt) else {
+            /// 如果 `rightAt` 的起始位置已经被 `startAt` 包含了
+            return Array(leftValues + self[startAt..<endIndex])
+        }
+        
+        if !indices.contains(rightAt) {
+            /// 如果右侧越界 直接返回
+            return Array(leftValues)
+        }
+        
+        return Array(leftValues + self[rightAt..<endIndex])
+    }
+    
+    
+}

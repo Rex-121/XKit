@@ -30,6 +30,13 @@ class StringTests: XCTestCase {
         
     }
     
+    func testReplaceM() {
+        
+        let s = "".x.middleReplaced(left: 3, right: 3, with: "******")
+        print(s)
+        let s1 = "1".x.middleReplaced(left: 3, right: 3, with: "******")
+        print(s1)
+    }
     
     func testReg() {
         
@@ -41,9 +48,9 @@ class StringTests: XCTestCase {
         let aa = "🐶".data(using: .utf16)
         print(aa ?? "")
         
-             let usFlag: Character = "\u{1F1FA}"
+        let usFlag: Character = "\u{1F1FA}"
         let k: Character = "\u{1F1F8}"
- print(usFlag, k)
+        print(usFlag, k)
         
         let regex = try? NSRegularExpression(pattern: "\\w", options: .caseInsensitive)
         //        [a-zA-Z0-9\\u4e00-\\u9fa5]{2,8}

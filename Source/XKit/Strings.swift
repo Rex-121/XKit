@@ -33,6 +33,22 @@ extension XX where Base == String {
         return String(replace)
     }
     
+    
+    /// 保留左右两边元素，替换中间元素
+    ///
+    ///     let stirngs = "1234567890".keep(left: 5, right: 3, replaced: "****")
+    ///     print(stirngs)
+    ///     // Prints "12345****890"
+    /// - Parameters:
+    ///   - left: 左侧保留到`n`
+    ///   - right: 右侧保留到`n`
+    ///   - replaced: 替换物
+    /// - Returns: [Element]
+    /// - Complexity: O(m) on average, where m is the length of replaced
+    public func keep(left: Int, right: Int, with: String) -> String {     
+        return String(Array(self.base).keep(left: left, right: right, replaced: with))
+    }
+    
     /// 是否含有 Emoji
     public var containsEmoji: Bool {
         var contains: Bool = false
