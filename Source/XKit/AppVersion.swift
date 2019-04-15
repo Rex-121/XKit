@@ -9,17 +9,24 @@
 import Foundation
 
 public typealias AppVersion = OperatingSystemVersion
-
-extension Bundle {
-    
+extension Bundle: XProvider {}
+extension XX where Base == Bundle {
     /// app 版本号 eg: 1.0.0
     public var appVersion: AppVersion {
         
-        if let info = self.infoDictionary {
+        if let info = self.base.infoDictionary {
             let v = info["CFBundleShortVersionString"] as? String ?? ""
             return AppVersion(stringWithDot: v)
         }
         return AppVersion(majorVersion: 0, minorVersion: 0, patchVersion: 0)
+    }
+    
+    /// app build号
+    public var buildVersion: String {
+        if let info = self.base.infoDictionary, let build = info["CFBundleVersion"] as? String {
+            return build
+        }
+        return ""
     }
 }
 
@@ -32,7 +39,6 @@ extension AppVersion: Comparable {
         return lhs.tupleVersion < rhs.tupleVersion
     }
 }
-
 
 extension AppVersion {
     

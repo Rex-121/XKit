@@ -22,7 +22,7 @@ class TestsAppVersion: XCTestCase {
 
     func testExample() {
        
-        print(Bundle.main.appVersion.versionString)
+        print(Bundle.main.x.appVersion.versionString)
         
         let aVersion = AppVersion(stringWithDot: "1.0.3")
         let bVersion = AppVersion(stringWithDot: "1.0.6")

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'XKit'
-  s.version          = '0.1.0'
+  s.version          = '0.2.1'
   s.summary          = 'A short description of XKit.'
 
 # This description is used to generate tags and improve search results.
@@ -23,13 +23,13 @@ TODO: Add long description of the pod here.
 
   s.homepage         = 'https://github.com/Rex/XKit'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  # s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Rex' => 'rex_wzc@163.com' }
   s.source           = { :git => 'https://github.com/Rex/XKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'XKit/**/*{.swift,.h}'
+  s.source_files = 'Source/XKit/**/*'
   
 end

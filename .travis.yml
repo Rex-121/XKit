@@ -2,11 +2,11 @@
 # * https://www.objc.io/issues/6-build-tools/travis-ci/
 # * https://github.com/supermarin/xcpretty#usage
 
-osx_image: xcode10.1
+osx_image: xcode10.2
 language: swift
 
 script:
-- xcodebuild test -enableCodeCoverage YES -project XKit.xcodeproj -scheme XKitTests -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=12.1,name=iPhone XS' ONLY_ACTIVE_ARCH=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
+- xcodebuild test -enableCodeCoverage YES -project XKit.xcodeproj -scheme XKitTests -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=12.2,name=iPhone XS' ONLY_ACTIVE_ARCH=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
 
 after_success:
   - bash <(curl -s https://codecov.io/bash) -J 'XKit'
