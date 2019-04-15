@@ -32,6 +32,12 @@ extension Collection {
     ///     // Prints "30"
     public var third: Self.Element? { return self.dropFirst(2).first }
     
+    
+    /// 是否为空，则为 `nil`
+    /// 如果不为空 则返回 `self`
+    public var nonEmpty: Self? {
+        return isEmpty ? nil : self
+    }
 }
 
 
@@ -57,6 +63,18 @@ extension Collection where Element == Int {
     
 }
 
+extension RandomAccessCollection {
+    
+    /// `index` 下的元素
+    ///
+    /// - Parameter index: 下标
+    /// - Returns: Element
+    public func element(at index: Index) -> Element? {
+        guard indices.contains(index) else { return nil }
+        return self[index]
+    }
+    
+}
 
 
 // MARK: - RangeReplaceableCollection

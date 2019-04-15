@@ -21,9 +21,7 @@ class XKitTests: XCTestCase {
     }
 
     func testExample() {
-        let bool = "56007123984712398657812396478123659123649612895612349861239786598123651234.5".x.isDecimal
         
-        print(bool)
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }

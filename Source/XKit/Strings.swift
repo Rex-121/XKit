@@ -20,6 +20,7 @@ extension XX where Base == String {
         return s.scanInt(&v) && s.isAtEnd
     }
     
+    /// 是否是小数格式的字符串
     public var isDecimal: Bool {
         let scanner = Scanner(string: self.base)
         var decimal: Decimal = 0
@@ -117,48 +118,13 @@ extension XX where Base == String {
         
         return drop_0(new)
     }
-    
-//    public struct Regex: OptionSet {
-//        public init(rawValue: String) {
-//            <#code#>
-//        }
-//
-//        public mutating func formUnion(_ other: XX<Base>.Regex) {
-//            <#code#>
-//        }
-//
-//        public mutating func formIntersection(_ other: XX<Base>.Regex) {
-//            <#code#>
-//        }
-//
-//        public mutating func formSymmetricDifference(_ other: XX<Base>.Regex) {
-//            <#code#>
-//        }
-//
-//        public init?(rawValue: String) {
-//            <#code#>
-//        }
-//
-//        public var rawValue: String
-//
-//        public typealias RawValue = String
-//
-//        public static var lower: Regex { return "a-z" }
-////        case capital = "A-Z"
-////        case num = "0-9"
-////        case chinese = "\\u4e00-\\u9fa5"
-//    }
-    
-//    func regexed(regex: Regex) -> Bool {
-//        guard let regex = try? NSRegularExpression(pattern: "", options: .caseInsensitive),
-//            let _ = regex.firstMatch(in: self.base, options: [], range: NSRange(location: 0, length: self.base.count))
-//            else { return false }
-//        return true
-//    }
+
 }
 
 extension Character: XProvider {}
 extension XX where Base == Character {
+    
+    /// 是否是Emoji
     var isEmoji: Bool {
         for scalar in self.base.unicodeScalars {
             switch scalar.value {
