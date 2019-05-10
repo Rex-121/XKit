@@ -22,15 +22,20 @@ public enum Pages {
 
 extension Pages {
     
-    /// 封面 .page(0, 20)
-    public static var cover: Pages { return .page(0, 1) }
+    private static let justSize: Int = 10
     
-    /// 是否是封面 .page(0, _)
+    private static let singlePage: Pages = Pages.page(1, Pages.justSize)
+    
+    /// 封面 .page(0, 20)
+    public static var cover: Pages { return .page(0, justSize) }
+    
+    /// 是否是封面 .page(1, _)
     public var isCover: Bool {
-        switch self {
-        case .page(let page, _): return page <= 1
-        case .book(page: let page, total: _): return page.isCover
-        }
+        return self.pagination <= 1
+//        switch self {
+//        case .page(let page, _): return page <= 1
+//        case .book(page: let page, total: _): return page.isCover
+//        }
     }
     
     /// 下一页,翻页(页数+1，行数不变)
@@ -38,10 +43,12 @@ extension Pages {
     
     /// 下一页,翻页(页数+1，行数不变)
     public func turned(_ to: Int? = nil) -> Pages {
-        switch self {
-            case let .page(p, lines): return .page(to ?? (p + 1), lines)
-            case let .book(page: page, total: total): return .book(page: page.turned(to), total: total)
-        }
+        guard let towards = to else { return self + Pages.singlePage }
+        return self + Pages.page(towards, Pages.justSize)
+//        switch self {
+//            case let .page(p, lines): return .page(to ?? (p + 1), lines)
+//            case let .book(page: page, total: total): return .book(page: page.turned(to), total: total)
+//        }
     }
     
     /// 当前页码
@@ -93,3 +100,53 @@ extension Pages: Equatable {
     }
     
 }
+
+extension Pages: AdditiveArithmetic {
+    
+    public static func -= (lhs: inout Pages, rhs: Pages) {
+        lhs = lhs - rhs
+    }
+    
+    public static func - (lhs: Pages, rhs: Pages) -> Pages {
+        switch lhs {
+        case let .page(page, lines):
+            
+            var c = page - rhs.pagination
+            
+            if c < 0 { c = 0 }
+            
+            return .page(c, lines)
+            
+        case let .book(page: page, total: total):
+            
+            return .book(page: page - rhs.page, total: total)
+        }
+    }
+    
+    
+    public static func += (lhs: inout Pages, rhs: Pages) {
+        lhs = lhs + rhs
+    }
+    
+    
+    public static func + (lhs: Pages, rhs: Pages) -> Pages {
+        switch lhs {
+        case let .page(page, lines):
+        
+            return .page(page + rhs.pagination, lines)
+ 
+        case let .book(page: page, total: total):
+            
+            return .book(page: page + rhs.page, total: total)
+        }
+    }
+    
+    
+    /// 所有数据均为0 -- *.book(page: .page(0, 0), total: 0)*
+    public static var zero: Pages {
+        return .book(page: .page(0, 0), total: 0)
+    }
+    
+    
+}
+
