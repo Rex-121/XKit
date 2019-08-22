@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7116940E2284275100B780C9 /* Pages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7116940D2284275100B780C9 /* Pages.swift */; };
 		711D21E721C0B96400E1F3CA /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711D21E621C0B96400E1F3CA /* Strings.swift */; };
+		714AFB8B230E859E00126EAD /* IPConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714AFB8A230E859E00126EAD /* IPConfig.swift */; };
 		7158CDE121B7F38F002E4EFC /* XKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7158CDD721B7F38F002E4EFC /* XKit.framework */; };
 		7158CDE621B7F38F002E4EFC /* XKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7158CDE521B7F38F002E4EFC /* XKitTests.swift */; };
 		7158CE0821B7F82B002E4EFC /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7158CE0321B7F82B002E4EFC /* AppVersion.swift */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		7116940D2284275100B780C9 /* Pages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pages.swift; sourceTree = "<group>"; };
 		711D21E621C0B96400E1F3CA /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		714AFB8A230E859E00126EAD /* IPConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPConfig.swift; sourceTree = "<group>"; };
 		7158CDD721B7F38F002E4EFC /* XKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7158CDE021B7F38F002E4EFC /* XKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7158CDE521B7F38F002E4EFC /* XKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XKitTests.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				715DAF2321BFA8CA0062FF00 /* Encrypt.swift */,
 				711D21E621C0B96400E1F3CA /* Strings.swift */,
 				7116940D2284275100B780C9 /* Pages.swift */,
+				714AFB8A230E859E00126EAD /* IPConfig.swift */,
 			);
 			path = XKit;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			files = (
 				7116940E2284275100B780C9 /* Pages.swift in Sources */,
 				715DAF2421BFA8CA0062FF00 /* Encrypt.swift in Sources */,
+				714AFB8B230E859E00126EAD /* IPConfig.swift in Sources */,
 				711D21E721C0B96400E1F3CA /* Strings.swift in Sources */,
 				7158CE0821B7F82B002E4EFC /* AppVersion.swift in Sources */,
 				7158CE0921B7F82B002E4EFC /* ArrayExt.swift in Sources */,
