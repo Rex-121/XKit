@@ -70,4 +70,19 @@ class StringTests: XCTestCase {
     func testHex() {
         assert(UIColor.white.x.hex == "FFFFFF")
     }
+    
+    func testAl() {
+        
+        assert("gasr".x.first_alphabet == "g")
+        
+        assert("王".x.first_alphabet == "w")
+        
+        assert("舍".x.first_alphabet == "s")
+        
+        assert("广安市".x.first_alphabet == "g")
+        assert("他".x.first_alphabet == "t")
+         
+        assert("$他".x.first_alphabet == "$")
+        
+    }
 }
