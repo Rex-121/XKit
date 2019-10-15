@@ -46,7 +46,7 @@ open class Biometrics {
     public let system: Style = Biometrics.systemSupportBiometrics
     
     /// Apple系统设置内文案
-    var systemDescription: String {
+    public var systemDescription: String {
         switch system {
         case .none: return ""
         case .face_Id, .touch_Id:
@@ -55,7 +55,7 @@ open class Biometrics {
     }
     
     /// 此机器是否有生物识别
-    var isSet: Bool { return system != .none }
+    public var isSet: Bool { return system != .none }
     
     
     public static func analysis(_ error: Error?) -> Result<(), Wrong> {
@@ -130,7 +130,7 @@ extension Biometrics {
     
     
     /// 是否 可用/被锁定
-    var enable_lockout: (enable: Bool, lockout: Bool, enrolled: Bool) {
+    public var enable_lockout: (enable: Bool, lockout: Bool, enrolled: Bool) {
         
         var error: NSError?
         
