@@ -28,6 +28,34 @@ extension XX where Base == Bundle {
         }
         return ""
     }
+    
+    /// app build号
+    public var appName: String {
+        if let info = self.base.infoDictionary, let name = info["CFBundleDisplayName"] as? String {
+            return name
+        }
+        return ""
+    }
+}
+
+//MARK: - AppInfo
+open class AppInfo {
+    
+    /// 版本号
+    public static var vesion: String {
+        return Bundle.main.x.appVersion.versionString
+    }
+    
+    /// build
+    public static var build: String {
+        return Bundle.main.x.buildVersion
+    }
+    
+    /// 应用名称
+    public static var appName: String {
+        return Bundle.main.x.appName
+    }
+    
 }
 
 extension AppVersion: Comparable {

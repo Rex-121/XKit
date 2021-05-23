@@ -119,6 +119,26 @@ extension XX where Base == String {
         return drop_0(new)
     }
 
+    /// 获取首个字符的字母
+    ///
+    /// discussion:
+    ///          - 王: w; 李: l
+    ///          - $王: $
+    ///          - `如果非法字符`: #
+    public var first_alphabet: String {
+        
+        let c = CFStringCreateMutableCopy(nil, 0, base as CFString)
+        
+        CFStringTransform(c, nil, kCFStringTransformToLatin, false)
+        
+        CFStringTransform(c, nil, kCFStringTransformStripCombiningMarks, false)
+        
+        guard let value = CFStringCreateWithSubstring(nil, c, CFRangeMake(0, 1)) else { return "#" }
+        
+        return String(value)
+        
+    }
+
 }
 
 extension Character: XProvider {}
