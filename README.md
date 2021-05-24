@@ -1,6 +1,6 @@
 # XKit
 
-[![Build Status](https://travis-ci.org/Rex-121/XKit.svg?branch=master)](https://travis-ci.org/Rex-121/XKit)
+[![Build Status](https://github.com/Rex-121/XKit/actions/workflows/swift.yml/badge.svg?branch=master)]
 [![Version](https://img.shields.io/cocoapods/v/XKit.svg?style=flat)](https://cocoapods.org/pods/XKit)
 [![Platform](https://img.shields.io/badge/platform-iOS-red.svg)](https://github.com/Rex-121/XFoundation)
 [![requirements](https://img.shields.io/badge/requirements-iOS%209.0%2B-blue.svg)](https://github.com/Rex-121/XFoundation)
