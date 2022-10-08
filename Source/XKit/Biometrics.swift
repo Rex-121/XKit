@@ -17,24 +17,24 @@ open class Biometrics {
     /// - face_Id: 面部识别
     /// - touch_Id: 指纹识别
     public enum Style: CustomStringConvertible {
-        case none, face_Id, touch_Id
+        case none, faceId, touchId
         
         public var description: String {
             switch self {
             case .none: return ""
-            case .face_Id: return "面容ID"
-            case .touch_Id: return "触控ID"
+            case .faceId: return "面容ID"
+            case .touchId: return "触控ID"
             }
         }
     }
     
     private let policy: LAPolicy
-        
-//    /// 最新的指纹识别
-//    /// - Parameter policy: 策略
-//    public static func now(_ policy: LAPolicy = .deviceOwnerAuthenticationWithBiometrics) -> Biometrics {
-//        return Biometrics(policy: policy)
-//    }
+    
+    //    /// 最新的指纹识别
+    //    /// - Parameter policy: 策略
+    //    public static func now(_ policy: LAPolicy = .deviceOwnerAuthenticationWithBiometrics) -> Biometrics {
+    //        return Biometrics(policy: policy)
+    //    }
     
     /// 最新的指纹识别
     /// - Parameter policy: 策略
@@ -49,7 +49,7 @@ open class Biometrics {
     public var systemDescription: String {
         switch system {
         case .none: return ""
-        case .face_Id, .touch_Id:
+        case .faceId, .touchId:
             return "系统设置 -> \(system.description)\("与密码")"
         }
     }
@@ -61,17 +61,17 @@ open class Biometrics {
     public static func analysis(_ error: Error?) -> Result<(), Wrong> {
         
         guard let e = error as? LAError else { return .success(()) }
-
+        
         let code = Int32(e.code.rawValue)
         
         switch code {
-        /// 认证被取消了，因为用户点击回退按钮
+            /// 认证被取消了，因为用户点击回退按钮
         case kLAErrorUserFallback: return .failure(.fallback)
-        /// 身份验证被用户取消（当用户点击取消按钮时提示）
+            /// 身份验证被用户取消（当用户点击取消按钮时提示）
         case kLAErrorUserCancel: return .failure(.cancelByUser)
-        /// 身份验证被系统取消（验证时当前APP被移至后台或者点击了home键导致验证退出时提示
+            /// 身份验证被系统取消（验证时当前APP被移至后台或者点击了home键导致验证退出时提示
         case kLAErrorSystemCancel: return .failure(.cancel)
-        /// 身份验证没有成功，因为用户未能提供有效的凭据(连续3次验证失败时提示)
+            /// 身份验证没有成功，因为用户未能提供有效的凭据(连续3次验证失败时提示)
         case kLAErrorAuthenticationFailed: return .failure(.wrong)
         case kLAErrorBiometryNotEnrolled, kLAErrorTouchIDNotEnrolled:
             return .failure(.notEnrolled)
@@ -81,7 +81,7 @@ open class Biometrics {
             return .failure(.lockout)
         default: return .failure(.wrong)
         }
-
+        
     }
     
     
@@ -91,9 +91,9 @@ open class Biometrics {
     ///   - reason: 解锁原因
     ///   - tryUnlock: 识别结果
     public static func tryUnlock(_ reason: String = "解锁\(AppInfo.appName)", _ tryUnlock: @escaping (Result<(), Wrong>) -> Void) {
-                
-        LAContext().evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { (success, error) in
         
+        LAContext().evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { (success, error) in
+            
             DispatchQueue.main.async {
                 
                 if success {
@@ -102,18 +102,18 @@ open class Biometrics {
                 else {
                     tryUnlock(analysis(error))
                 }
-
+                
             }
             
         }
-
+        
     }
     
     
     public enum Wrong: Error {
         case cancel, cancelByUser, notAvailable, wrong, lockout, notEnrolled, fallback
     }
-
+    
 }
 
 
@@ -175,10 +175,10 @@ extension Biometrics {
         guard let era = Int(deviceName.replacingOccurrences(of: "iPhone", with: "")) else { return .none }
         
         if era > 10 || (deviceString == "iPhone10,3") || (deviceString == "iPhone10,6") {
-            return .face_Id
+            return .faceId
         }
         else if (era >= 6 && era <= 10) {
-            return .touch_Id
+            return .touchId
         }
         else {
             return .none
